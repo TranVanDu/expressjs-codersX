@@ -1,0 +1,22 @@
+html
+	head
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="../../public/styles/custom.css">
+	body
+		nav.navbar.navbar-expand-lg.navbar-light.bg-light
+			button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+				span.navbar-toggler-icon
+
+			#navbarNav.collapse.navbar-collapse
+				.d-flex.justify-content-end.mr-5(style="width:100%;")
+					a.navbar-brand(href='https://school.coders-x.com') Coder-M
+					ul.navbar-nav
+						li.nav-item.active
+							a.nav-link(href='/auth/login')| Login
+							span.sr-only (current)
+						li.nav-item
+							a.nav-link(href='/auth/signin') Signin
+		.container.mt-5
+			block content

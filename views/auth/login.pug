@@ -1,0 +1,18 @@
+extends ../layouts/common1
+block content
+	h2 login
+	hr
+	if errors
+		each error in errors
+			.alert.alert-danger=error
+	form( method='POST')
+		.form-group
+			label(for='name2') Email
+			input#name2.form-control(type='text', name='email', placeholder='Enter Mail',value= values ? values.email:'')
+		.form-group
+			label(for='password1') Password
+			input#password1.form-control(type='password', name='password', placeholder='Enter Password')
+		.d-flex.justify-content-end
+			span.p-2 Chưa có tài khoản?
+			a.p-2(href='/auth/signin') signin
+		button.btn.btn-primary Login	

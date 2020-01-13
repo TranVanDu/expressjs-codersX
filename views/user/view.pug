@@ -1,0 +1,13 @@
+extends ../layouts/comon
+block content
+	h3 View user
+	hr
+	.d-flex
+		img.avatar(src="http://localhost:3001/"+users.avatar)
+		.d-flex.flex-column
+			.ml-5
+				b Name:
+				span=users.name
+			.ml-5
+				b Phone:
+				span=users.phone

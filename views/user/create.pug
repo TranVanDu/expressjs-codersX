@@ -1,0 +1,18 @@
+extends ../layouts/comon
+block content
+	h2 Create user
+	hr
+	if errors
+		each error in errors
+			.alert.alert-danger=error
+	form(action='/users/create', method='POST',enctype="multipart/form-data")
+		.form-group
+			label(for='name1') Name
+			input#name1.form-control(type='text', name='name', placeholder='Enter Name', value=values?values.name:'')
+		.form-group
+			label(for='phone1') Phone
+			input#phone1.form-control(type='text', name='phone', placeholder='Enter Phone', value= values?values.phone:'')
+		.form-group
+			label(for='avatar') Avatar
+			input#avatar.form-control-file(type='file', name='avatar')
+		button.btn.btn-primary Create	

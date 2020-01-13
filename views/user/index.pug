@@ -1,0 +1,26 @@
+extends ../layouts/comon
+block content
+	h3 
+		span User
+		a.btn.btn-primary.ml-5(href="/users/create") Create
+	.d-flex.align-items-center
+		form.mt-5.ml-auto(action='/users/search' method='get',class="d-flex")
+			input.form-control(type='text' name='q')
+			button.btn.btn-success.ml-2 search
+
+	table.table.text-align-center
+		tr
+			th Avatar
+			th Name
+			th Phone
+			th Actions
+
+		each user in users
+			tr
+				td
+					img.avatar(src=user.avatar, style="width:40px; height:40px; border-radius:50%;")
+				td= user.name
+				td= user.phone
+				td
+					a.btn.btn-info(href='/users/'+user.id) View
+			

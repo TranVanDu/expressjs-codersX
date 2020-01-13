@@ -1,0 +1,21 @@
+extends ../layouts/common1
+block content
+	h2 Signin
+	hr
+	if errors
+		each error in errors
+			.alert.alert-danger=error
+	form(method='POST')
+		.form-group
+			label(for='name4') Name
+			input#name4.form-control(type='text', name='name', placeholder='Enter Name', value=values?values.name:'')
+		.form-group
+			label(for='name3') Email
+			input#name3.form-control(type='text', name='email', placeholder='Enter Mail', value=values?values.email:'')
+		.form-group
+			label(for='password2') Password
+			input#password2.form-control(type='password', name='password', placeholder='Enter Password')
+		.form-group
+			label(for='password3') Validate Password
+			input#password3.form-control(type='password', name='validate_password', placeholder='Enter validate Password')
+		button.btn.btn-primary Signin
